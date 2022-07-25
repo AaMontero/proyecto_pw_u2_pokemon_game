@@ -1,5 +1,5 @@
 <template>
-  <PokemonPage/>
+  <ConsultaIP/>
 </template>
 
 <script>
@@ -7,11 +7,13 @@ import Pokemon from "./components/Pokemon.vue"
 import PokemonPage from './components/PokemonPage.vue'
 import PokemonPicture from '@/components/PokemonOptions.vue'
 import PokemonOptions from '@/components/PokemonOptions.vue'
+import ConsultaIP from '@/components/ConsultaIP.vue'
 export default {
   name: 'App',
 
   components: {
     PokemonPage,
+    ConsultaIP,
   }
 }
 </script>
