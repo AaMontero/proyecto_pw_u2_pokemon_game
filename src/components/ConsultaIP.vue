@@ -59,7 +59,7 @@
     </table>
   </div>
   <div class="botton">
-    <td><button v-on:click="consultarDatos">Consultar</button></td>
+    <td><button v-on:click="consultarDatos2">Consultar</button></td>
   </div>
 </template>
 
@@ -79,77 +79,94 @@ export default {
     };
   },
   methods: {
-    async ObtenerDireccion() {
-      const {type} = await fetch("https://ipwho.is/" + this.DireccionIP).then(
-        (r) => r.json()
-      );
-      console.log(type);
-
-      this.TipoIP = type;
-    },
-    async ObtenerContinente() {
-      const {continent} = await fetch(
+ async consultarDatos2() {
+        const {type, continent, country, region, city, connection, flag } = await fetch(
         "https://ipwho.is/" + this.DireccionIP
       ).then((r) => r.json());
+      const {org, isp} = connection;
+      const {img} = flag; 
+      this.TipoIP = type; 
+      this.Continente = continent; 
+      this.Ciudad = country; 
+      this.Region = region; 
+      this.Ciudad = city; 
+      this.Organizacion = org; 
+      this.Proveedor = isp; 
+      this.Imagen = img; 
 
-      this.Continente = continent;
-    },
-    async ObtenerPais() {
-      const {country} = await fetch(
-        "https://ipwho.is/" + this.DireccionIP
-      ).then((r) => r.json());
 
-      this.Pais = country;
-    },
-    async ObtenerRegion() {
-      const {region} = await fetch(
-        "https://ipwho.is/" + this.DireccionIP
-      ).then((r) => r.json());
+  },   
+},
+}
+    // async ObtenerDireccion() {
+    //   const {type} = await fetch("https://ipwho.is/" + this.DireccionIP).then(
+    //     (r) => r.json()
+    //   );
+    //   console.log(type);
 
-      this.Region = region;
-    },
-    async ObtenerCiudad() {
-      const {city} = await fetch("https://ipwho.is/" + this.DireccionIP).then(
-        (r) => r.json()
-      );
+    //   this.TipoIP = type;
+    // },
+    // async ObtenerContinente() {
+    //   const {continent} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
 
-      this.Ciudad = city;
-    },
-    async ObtenerOrganizacion() {
-      const {connection} = await fetch(
-        "https://ipwho.is/" + this.DireccionIP
-      ).then((r) => r.json());
-      const { org } = connection;
+    //   this.Continente = continent;
+    // },
+    // async ObtenerPais() {
+    //   const {country} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
 
-      this.Organizacion = org;
-    },
-    async ObtenerProveedor() {
-      const {connection} = await fetch(
-        "https://ipwho.is/" + this.DireccionIP
-      ).then((r) => r.json());
-      const { isp } = connection;
-      this.Proveedor = isp;
-    },
-    async obtenerImagen() {
-      const {flag} = await fetch(
-        "https://ipwho.is/" + this.DireccionIP
-      ).then((r) => r.json());
-      const {img} = flag;
-      this.Imagen = img;
-      console.log(img)
-    },
-    consultarDatos() {
-      this.ObtenerDireccion();
-      this.ObtenerContinente();
-      this.ObtenerPais();
-      this.ObtenerRegion();
-      this.ObtenerCiudad();
-      this.ObtenerOrganizacion();
-      this.ObtenerProveedor();
-      this.obtenerImagen();
-    },
-  },
-};
+    //   this.Pais = country;
+    // },
+    // async ObtenerRegion() {
+    //   const {region} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
+
+    //   this.Region = region;
+    // },
+    // async ObtenerCiudad() {
+    //   const {city} = await fetch("https://ipwho.is/" + this.DireccionIP).then(
+    //     (r) => r.json()
+    //   );
+
+    //   this.Ciudad = city;
+    // },
+    // async ObtenerOrganizacion() {
+    //   const {connection} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
+    //   const { org } = connection;
+
+    //   this.Organizacion = org;
+    // },
+    // async ObtenerProveedor() {
+    //   const {connection} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
+    //   const { isp } = connection;
+    //   this.Proveedor = isp;
+    // },
+    // async obtenerImagen() {
+    //   const {flag} = await fetch(
+    //     "https://ipwho.is/" + this.DireccionIP
+    //   ).then((r) => r.json());
+    //   const {img} = flag;
+    //   this.Imagen = img;
+    //   console.log(img)
+    // },
+    // consultarDatos() {
+    //   this.ObtenerDireccion();
+    //   this.ObtenerContinente();
+    //   this.ObtenerPais();
+    //   this.ObtenerRegion();
+    //   this.ObtenerCiudad();
+    //   this.ObtenerOrganizacion();
+    //   this.ObtenerProveedor();
+    //   this.obtenerImagen();
+    // },
 </script>
 
 <style>
