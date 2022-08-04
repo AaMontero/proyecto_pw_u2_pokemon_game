@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import Pokemon from "./components/Pokemon.vue"
+
 //import PokemonPage from './components/PokemonPage.vue'
-import PokemonPicture from '@/components/PokemonOptions.vue'
-import PokemonOptions from '@/components/PokemonOptions.vue'
+import AboutPage from './modulos/pokemon/pages/aboutPage.vue'
 export default {
-  name: 'App',
+  name: 'App',  
 
   components: {
     //PokemonPage,
+    AboutPage
   }
 }
 </script>
