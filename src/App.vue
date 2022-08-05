@@ -1,11 +1,12 @@
 <template>
   <img src="./assets/logo.png" alt="Vue logo">
+  <router-view/>
 </template>
 
 <script>
 
 //import PokemonPage from './components/PokemonPage.vue'
-import AboutPage from './modulos/pokemon/pages/aboutPage.vue'
+import AboutPage from './modulos/pokemon/pages/AboutPage'
 export default {
   name: 'App',  
 
