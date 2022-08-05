@@ -1,6 +1,6 @@
 <template>
   <h1>List Page</h1>
-  <p>Página que enlista los pokemon</p>
+  <p>Página de la lista de los pokemon</p>
 </template>
 
 <script>
