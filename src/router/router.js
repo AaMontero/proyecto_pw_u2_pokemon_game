@@ -15,7 +15,7 @@ const routes =[
     {path:'/', component: ()=> import (/*webpackChunkName: "AboutPage"*/'../modulos/pokemon/pages/AboutPage.vue')},
     {path:'/list', component: ()=> import (/*webpackChunkName: "ListPage"*/ '../modulos/pokemon/pages/ListPage.vue')},
     {path:'/pokemon', component:()=> import (/*webpackChunkName: "PokemonPage"*/ '../modulos/pokemon/pages/PokemonPage.vue')},
-    {path: '/:pathMatch(.*)', component: ()=> import ('../modulos/pokemon/pages/NoPageFound.vue')},
+    {path: '/:pathMatch(.*)', component: ()=> import (/*webpackChunkName: "Otro"*/'../modulos/pokemon/pages/NoPageFound.vue')},
 ]
 const router = createRouter({
     history: createWebHashHistory(),
